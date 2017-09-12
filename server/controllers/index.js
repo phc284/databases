@@ -22,7 +22,7 @@ module.exports = {
       console.log('in user get');
     },
     post: function (req, res) {
-      console.log('in user post', req.body);
+      console.log('in user post controller ', req.body);
       //send to the models user.post function to send to the database
       models.users.post(req.body, function () {
         res.end();

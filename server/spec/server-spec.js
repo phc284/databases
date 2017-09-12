@@ -28,7 +28,7 @@ describe('Persistent Node Chat Server', function() {
     dbConnection.end();
   });
 
-  it('Should insert posted messages to the DB', function(dowone) {
+  it('Should insert posted messages to the DB', function(done) {
     // Post the user to the chat server.
     request({
       method: 'POST',
@@ -56,6 +56,7 @@ describe('Persistent Node Chat Server', function() {
         dbConnection.query(queryString, queryArgs, function(err, results) {
           // Should have one result:
           expect(results.length).to.equal(1);
+          console.log(results)
 
           // TODO: If you don't have a column named text, change this test.
           expect(results[0].message).to.equal('In mercy\'s name, three days is all I need.');
