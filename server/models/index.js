@@ -9,7 +9,16 @@ module.exports = {
   users: {
     // Ditto as above.
     get: function () {},
-    post: function () {}
+    post: function (user, callback) {
+      console.log('db post: ', typeof user.username)
+      //need to insert username into database
+      //not working, or don't know how to get it to update in mysql
+      db.dbConnection.query("INSERT INTO users (username) VALUES(" + user.username + ");", function (error, results) {
+        if (!error) {
+          //make sure the response ends
+          callback();
+        }
+      });
+    }
   }
 };
-
