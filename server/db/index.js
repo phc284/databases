@@ -7,7 +7,7 @@ var mysql = require('mysql');
 //create connection to database done at 5:27pm
 
 exports.dbConnection = mysql.createConnection({
-  host: 'http://127.0.0.1:3000',
+  host: 'localhost',
   user: 'student',
   password: 'student',
   database: 'chat'

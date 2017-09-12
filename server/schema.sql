@@ -1,4 +1,4 @@
-/*DROP DATABASE chat;*/
+DROP DATABASE chat;
 
 CREATE DATABASE chat;
 
@@ -7,8 +7,9 @@ USE chat;
 CREATE TABLE messages (
   /* Describe your table here.*/
   id int primary key auto_increment,
-  name varchar(50),
-  message varchar(140)
+  USERS_ID int references users(id),
+  message varchar(140),
+  ROOM_ID int references rooms(id)
 
 );
 

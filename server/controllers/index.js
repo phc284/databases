@@ -8,6 +8,9 @@ module.exports = {
     post: function (req, res) {
       console.log('in msg post');
       console.log('msg post req body', req.body);
+      models.messages.post(req.body, function () {
+        res.end();
+      })
 
 
     } // a function which handles posting a message to the database
